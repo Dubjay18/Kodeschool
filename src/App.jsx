@@ -13,7 +13,7 @@ function App() {
       <div className="">
         <AnimatePresence>
           <Routes location={location} key={location.key}>
-            <Route exact path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/dashboard/*" element={<Dashboard />} />
             <Route path={"*"} element={<NotFound />} />
           </Routes>
