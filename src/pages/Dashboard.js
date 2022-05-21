@@ -78,7 +78,7 @@ function Dashboard() {
         <Link
           to="/dashboard/"
           className={
-            location.pathname === "/dashboard/"
+            location.pathname === "#/dashboard/"
               ? "text-green-600 md:text-xl ml-1 rounded-l-full font-bold md:pr-10 md:pl-5 sm:py-5 bg-blue-200 my-7 transition-all duration-200 focus:text-green-500 flex justify-center items-center"
               : "text-white md:text-xl ml-1 rounded-l-full font-bold md:pr-10 md:pl-5  sm:py-5 my-7 transition-all duration-200 hover:bg-blue-300 flex justify-center items-center "
           }
@@ -89,7 +89,7 @@ function Dashboard() {
         <Link
           to="/dashboard/courses"
           className={
-            location.pathname === "/dashboard/courses"
+            location.pathname === "#/dashboard/courses"
               ? "text-green-600 md:text-xl ml-1 rounded-l-full font-bold md:pr-10 md:pl-5 sm:py-5 bg-blue-200 my-7 transition-all duration-200 focus:text-green-500 flex justify-center items-center"
               : "text-white md:text-xl ml-1 rounded-l-full font-bold md:pr-10 md:pl-5 sm:py-5  my-7 transition-all duration-200 hover:bg-blue-300 flex justify-center items-center "
           }
@@ -100,7 +100,7 @@ function Dashboard() {
         <Link
           to="/dashboard/profile"
           className={
-            location.pathname === "/dashboard/profile"
+            location.pathname === "#/dashboard/profile"
               ? "text-green-600 md:text-xl ml-1 rounded-l-full font-bold md:pr-10 md:pl-5 sm:py-5 bg-blue-200 my-7 transition-all duration-200 focus:text-green-500 flex justify-center items-center"
               : "text-white md:text-xl ml-1 rounded-l-full font-bold md:pr-10 md:pl-5 sm:py-5  my-7 transition-all duration-200 hover:bg-blue-300 flex justify-center items-center "
           }
