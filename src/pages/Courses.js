@@ -52,7 +52,7 @@ function Courses() {
       initial="hidden"
       animate="show"
       exit="exit"
-      className="h-screen overflow-y-scroll w-fit"
+      className="h-screen overflow-y-scroll "
     >
       <motion.div
         variants={item}
@@ -63,21 +63,20 @@ function Courses() {
         <h1 className=" flex  justify-center my-8 font-poppins underline text-gray-900 md:text-3xl">
           Courses
         </h1>
-        <div className="my-24 grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-4 ">
+        <div className="my-24 grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-4 w-full">
           {courses.map((course, i) => {
             return (
               <div
                 className={
                   i % 2 === 0
-                    ? "bg-green-400 md:p-20 p-10 text-white mx-6 my-6 hover:scale-105 transition-all duration-200 cursor-pointer"
-                    : "md:p-20  p-10 bg-slate-200 text-green-400 mx-6 my-6 hover:scale-105 transition-all duration-200 cursor-pointer"
+                    ? "bg-green-400 md:p-20 p-10 text-white mx-6 my-6 hover:scale-105 transition-all duration-200 cursor-pointer flex flex-col items-center justify-center"
+                    : "md:p-20  p-10 bg-slate-200 text-green-400 mx-6 my-6 hover:scale-105 transition-all duration-200 cursor-pointer flex flex-col items-center justify-center"
                 }
                 onClick={() => navigate(`/dashboard/course/${course.name}`)}
                 key={i}
               >
                 <div className="w-fit p-4 bg-white rounded-full text-blue-600">
-                  <img src={course.src} className="w-full" alt="" />
-                  {console.log(course.src)}
+                  <img src={course?.src} className="w-14" alt="" />
                 </div>
                 <div className="font-poppins text-xl">{course?.name}</div>
               </div>

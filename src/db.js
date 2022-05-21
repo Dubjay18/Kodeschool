@@ -1,8 +1,13 @@
+import Bio from "./svgs/bio.svg";
+import Mth from "./svgs/mth.svg";
+import Phy from "./svgs/phy.svg";
+import Eng from "./svgs/eng.svg";
+import Chm from "./svgs/chm.svg";
 const courses = [
   {
     id: "bka20Q9TN6M",
     name: "chemistry",
-    src: "/chm.svg",
+    src: Chm,
     details: {
       intro:
         "Chemistry is a physical science, and it is the study of the properties of and interactions between matter and energy. In other words, chemistry is a way to study the properties, characteristics, and physical and chemical changes of matter.",
@@ -12,7 +17,7 @@ const courses = [
   {
     id: "b1t41Q3xRM8",
     name: "Physics",
-    src: "/phy.svg",
+    src: Phy,
     details: {
       intro:
         "Physics is a science. Science works according to the scientific method. The scientific method accepts only reason, logic, and experimental evidence to tell between what is scientifically correct and what is not. Scientists do not simply believe – they test, and keep testing until satisfied. Just because some “big scientist” says something is right, that thing does not become a fact of science.",
@@ -31,7 +36,7 @@ const courses = [
   {
     id: "JbhBdOfMEPs",
     name: "Mathematics",
-    src: "/mth.svg",
+    src: Mth,
     details: {
       intro:
         "Mathematics is  not  only  concerned with everyday problems, but  also  with  using  imagination,  intuition  and  reasoning  to find new ideas  and  to  solve puzzling problems.",
@@ -47,7 +52,7 @@ const courses = [
   {
     id: "DTnCqBUnaRM",
     name: "Biology",
-    src: "/bio.svg",
+    src: Bio,
     details: {
       intro:
         "The word biology means, the science of life, from the Greek bios, life, and logos, word or knowledge. Therefore, Biology is the science of Living Things. That is why Biology is sometimes known as Life Science.",
@@ -66,7 +71,7 @@ const courses = [
   {
     id: "nQfsSPikv5U",
     name: "English Language",
-    src: "/eng.svg",
+    src: Eng,
     details: {
       intro:
         "English studies (usually called simply English) is an academic discipline taught in primary, secondary, and post-secondary education in English-speaking countries; it is not to be confused with English taught as a foreign language, which is a distinct discipline. It involves the study and exploration of texts created in English literature.",

@@ -162,9 +162,9 @@ function Profile() {
           Personal Details
         </p>
       </div>
-      <div className="grid grid-cols-6 my-6">
+      <div className="grid grid-cols-6 my-6 mx-10">
         <div className="md:col-span-3"></div>
-        <div className="col-span-1 rounded-full h-fit w-60">
+        <div className="col-span-1 rounded-full h-fit ">
           <div className="rounded-full md:w-60 md:h-56 w-32 h-28">
             <img
               src={pp}
@@ -179,10 +179,10 @@ function Profile() {
         variants={item}
         initial="hidden"
         animate="show2"
-        className="mx-2 grid grid-cols-6 gap-2 font-poppins"
+        className="sm:mx-10 mx-5 grid grid-cols-6 gap-2 font-poppins"
         onSubmit={updateProfile}
       >
-        <div className="p-2 border-2 sm:col-span-3 col-span-6 flex flex-col">
+        <div className="p-2 border-2 border-gray-400 sm:col-span-3 col-span-6 flex flex-col">
           <label className="text-gray-500">Full Name</label>
           <input
             className="outline-none px-2 py-2"
@@ -191,7 +191,7 @@ function Profile() {
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <div className="p-2 border-2 sm:col-span-3 col-span-6 flex flex-col">
+        <div className="p-2 border-2 border-gray-400 sm:col-span-3 col-span-6 flex flex-col">
           <label className="text-gray-500">Email Address</label>
           <input
             className="outline-none px-2 py-2"
@@ -201,7 +201,7 @@ function Profile() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div className="p-2 border-2 col-span-6 flex flex-col">
+        <div className="p-2 border-2 border-gray-400 col-span-6 flex flex-col">
           <label className="text-gray-500">Address</label>
           <input
             className="outline-none px-2 py-2"
@@ -210,7 +210,7 @@ function Profile() {
             onChange={(e) => setAddress(e.target.value)}
           />
         </div>
-        <div className="p-2 border-2 sm:col-span-3 col-span-6 flex flex-col">
+        <div className="p-2 border-2 border-gray-400 sm:col-span-3 col-span-6 flex flex-col">
           <label className="text-gray-500">Country</label>
           <input
             className="outline-none px-2 py-2"
@@ -219,7 +219,7 @@ function Profile() {
             onChange={(e) => setCountry(e.target.value)}
           />
         </div>
-        <div className="p-2 border-2 sm:col-span-3 col-span-6 flex flex-col">
+        <div className="p-2 border-2 border-gray-400 sm:col-span-3 col-span-6 flex flex-col">
           <label className="text-gray-500">State/Province</label>
           <input
             className="outline-none px-2 py-2"
@@ -228,7 +228,7 @@ function Profile() {
             onChange={(e) => setState(e.target.value)}
           />
         </div>
-        <div className="p-2 border-2 sm:col-span-3 col-span-6 flex flex-col">
+        <div className="p-2 border-2 border-gray-400 sm:col-span-3 col-span-6 flex flex-col">
           <label className="text-gray-500">Zip Code</label>
           <input
             className="outline-none px-2 py-2"
