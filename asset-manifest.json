@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Kodeschool/static/css/main.febb822b.css",
-    "main.js": "/Kodeschool/static/js/main.d730da16.js",
+    "main.css": "/Kodeschool/static/css/main.c6ffd279.css",
+    "main.js": "/Kodeschool/static/js/main.64185d46.js",
     "static/js/787.b2d5347b.chunk.js": "/Kodeschool/static/js/787.b2d5347b.chunk.js",
     "static/media/undraw.png": "/Kodeschool/static/media/undraw.a943edf0a750155c0d38.png",
     "static/media/profilepic.jpg": "/Kodeschool/static/media/profilepic.ce52fc289dcc1c4ba223.jpg",
@@ -17,12 +17,12 @@
     "index.html": "/Kodeschool/index.html",
     "static/media/Vector.svg": "/Kodeschool/static/media/Vector.cbef87bc7bef84cb5f17c08504941fbb.svg",
     "static/media/Ellipse 154.svg": "/Kodeschool/static/media/Ellipse 154.ad04b0ac9a096e0d8a2e174d48d38228.svg",
-    "main.febb822b.css.map": "/Kodeschool/static/css/main.febb822b.css.map",
-    "main.d730da16.js.map": "/Kodeschool/static/js/main.d730da16.js.map",
+    "main.c6ffd279.css.map": "/Kodeschool/static/css/main.c6ffd279.css.map",
+    "main.64185d46.js.map": "/Kodeschool/static/js/main.64185d46.js.map",
     "787.b2d5347b.chunk.js.map": "/Kodeschool/static/js/787.b2d5347b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.febb822b.css",
-    "static/js/main.d730da16.js"
+    "static/css/main.c6ffd279.css",
+    "static/js/main.64185d46.js"
   ]
 }
