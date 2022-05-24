@@ -10,7 +10,7 @@ import {
 } from "@heroicons/react/solid";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { auth, db } from "../firebase";
+import { auth, db, provider } from "../firebase";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
@@ -18,10 +18,14 @@ import {
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   updateProfile,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from "firebase/auth";
 import { useStateValue } from "../stateProvider";
-import { doc, setDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import { GoogleLogin } from "react-google-login";
+
 function Login() {
   const navigate = useNavigate();
   const [{ user }, dispatch] = useStateValue();
@@ -69,6 +73,37 @@ function Login() {
       },
     },
   };
+  async function googleAuth() {
+    signInWithPopup(auth, provider)
+      .then(async (result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+        const docRef = doc(db, "users", user.displayName);
+        const docSnap = await getDoc(docRef);
+
+        if (!docSnap.exists()) {
+          await setDoc(doc(db, "users", user.displayName), {
+            name: user.displayName,
+            email: user.email,
+          });
+        }
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        AlertDismissible(errorMessage, true);
+        // ...
+      });
+  }
+
   const register = (e) => {
     e.preventDefault();
     setDisable(true);
@@ -355,18 +390,28 @@ function Login() {
                     )}
                   </button>
                 ) : (
-                  <button
-                    type="submit"
-                    className="hover:bg-gradient-to-br hover:from-green-500 hover:to-blue-600 transition-all duration-200 text-white px-6 py-2 bg-blue-500 w-full rounded-full my-6 flex items-center justify-center"
-                    disabled={disable}
-                    onClick={SignIn}
-                  >
-                    {disable ? (
-                      <CogIcon className="text-white w-10 h-10 animate-spin" />
-                    ) : (
-                      "LOGIN"
-                    )}
-                  </button>
+                  <>
+                    <button
+                      type="submit"
+                      className="hover:bg-gradient-to-br hover:from-green-500 hover:to-blue-600 transition-all duration-200 text-white px-6 py-2 bg-blue-500 w-full rounded-full my-6 flex items-center justify-center"
+                      disabled={disable}
+                      onClick={SignIn}
+                    >
+                      {disable ? (
+                        <CogIcon className="text-white w-10 h-10 animate-spin" />
+                      ) : (
+                        "LOGIN"
+                      )}
+                    </button>
+                    <button
+                      type="button"
+                      disabled={disable}
+                      onClick={googleAuth}
+                      className="login-with-google-btn"
+                    >
+                      Sign in with Google
+                    </button>
+                  </>
                 )}
               </form>
             </div>
