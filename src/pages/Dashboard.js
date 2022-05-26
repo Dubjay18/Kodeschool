@@ -1,5 +1,5 @@
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { auth } from "../firebase";
 import { useStateValue } from "../stateProvider";
 import Login from "./Login";
@@ -20,6 +20,7 @@ import CourseInfo from "./CourseInfo";
 
 function Dashboard() {
   const [{ user }, dispatch] = useStateValue();
+  const [pp, setPp] = useState(null);
   const loaction = useLocation();
   console.log(location);
   useEffect(() => {
@@ -33,6 +34,7 @@ function Dashboard() {
           type: "SET_UID",
           uid: userCred.uid,
         });
+        setPp(userCred.photoURL);
         console.log(userCred);
       } else {
         dispatch({
@@ -72,8 +74,13 @@ function Dashboard() {
     <div className="grid grid-cols-9 h-screen overflow-hidden bg-blue-200">
       <div className="sm:col-span-2 col-span-1 bg-blue-500  py-3 flex flex-col rounded-tr-4xl ">
         <h1 className="mb-8 md:mx-4 sm:pr-5 sm:pl-5 py-2 font-poppins font-bold bg-white flex justify-center items-center rounded-xl md:">
+          {pp ? (
+            <img src={pp} className="w-10 h-10" />
+          ) : (
+            <img src={logo} className="w-10 h-10" />
+          )}{" "}
           <img src={logo} className="w-10 h-10" />
-          <p className="md:block hidden">KodeSchool</p>
+          <p className="md:block hidden">{user}</p>
         </h1>
         <Link
           to="/dashboard/"

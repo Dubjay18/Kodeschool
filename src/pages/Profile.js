@@ -17,6 +17,7 @@ function Profile() {
   const [address, setAddress] = useState("");
   const [zipCode, setZipCode] = useState("");
   const [name, setName] = useState("");
+  const [pro, setPro] = useState(null);
   async function AlertDismissible(words, error) {
     if (!error) {
       toast.success(words, {
@@ -50,6 +51,7 @@ function Profile() {
         onAuthStateChanged(auth, (userCred) => {
           if (userCred) {
             setEmail(userCred.email);
+            setPro(userCred?.photoURL);
           } else {
             AlertDismissible("Error: User not logged in", true);
           }
@@ -166,11 +168,19 @@ function Profile() {
         <div className="md:col-span-3"></div>
         <div className="col-span-1 rounded-full h-fit ">
           <div className="rounded-full md:w-60 md:h-56 w-32 h-28">
-            <img
-              src={pp}
-              alt=""
-              className="rounded-full w-full object-cover my-4 h-full"
-            />
+            {pro ? (
+              <img
+                src={pro}
+                alt=""
+                className="rounded-full w-full object-cover my-4 h-full"
+              />
+            ) : (
+              <img
+                src={pp}
+                alt=""
+                className="rounded-full opacity-40 w-full object-cover my-4 h-full"
+              />
+            )}
           </div>
         </div>
       </div>
